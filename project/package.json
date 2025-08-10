@@ -2,10 +2,9 @@
   "name": "cs-soleil-afrique",
   "version": "1.0.0",
   "description": "Site web du Complexe Scolaire Soleil d'Afrique",
-  "main": "index.js",
   "scripts": {
     "dev": "netlify dev",
-    "build": "echo 'No build step required'",
+    "build": "echo 'Build completed'",
     "deploy": "netlify deploy --prod"
   },
   "dependencies": {
@@ -14,8 +13,5 @@
   },
   "devDependencies": {
     "netlify-cli": "^17.0.0"
-  },
-  "keywords": ["education", "tchad", "ecole", "netlify"],
-  "author": "CS Soleil d'Afrique",
-  "license": "MIT"
+  }
 }
