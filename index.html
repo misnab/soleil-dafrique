@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complexe Scolaire Soleil d'Afrique - Excellence Éducative au Tchad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        primaryHover: '#4F46E5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <!-- Site Public -->
+    <div id="publicSite">
+        <!-- Header -->
+        <header class="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 fixed w-full top-0 z-40">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-primaryHover rounded-lg flex items-center justify-center">
+                            <i class="fas fa-sun text-white"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-lg font-bold">CS Soleil d'Afrique</h1>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Excellence Éducative</p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Desktop -->
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a href="#accueil" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Accueil</a>
+                        <a href="#a-propos" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">À Propos</a>
+                        <a href="#formations" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Formations</a>
+                        <a href="#resultats" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Résultats</a>
+                        <a href="#actualites" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Actualités</a>
+                        <a href="#contact" class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Contact</a>
+                        <div id="authButtons">
+                            <button onclick="showLoginModal()" class="bg-primary hover:bg-primaryHover text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-sign-in-alt mr-2"></i>
+                                Connexion
+                            </button>
+                        </div>
+                        <div id="userMenu" class="hidden flex items-center space-x-4">
+                            <span id="userNameNav" class="text-gray-600 dark:text-gray-300"></span>
+                            <div class="relative">
+                                <button onclick="toggleUserDropdown()" class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-white text-sm"></i>
+                                </button>
+                                <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <div id="adminMenuItem" class="hidden">
+                                        <button onclick="showAdminPanel()" class="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-t-lg">
+                                            <i class="fas fa-cog mr-2"></i>
+                                            Administration
+                                        </button>
+                                    </div>
+                                    <button onclick="logout()" class="w-full px-4 py-2 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-b-lg">
+                                        <i class="fas fa-sign-out-alt mr-2"></i>
+                                        Déconnexion
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <!-- Menu Mobile -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation Mobile -->
+                <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-gray-200 dark:border-gray-700 mt-4">
+                    <nav class="flex flex-col space-y-3 pt-4">
+                        <a href="#accueil" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Accueil</a>
+                        <a href="#a-propos" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">À Propos</a>
+                        <a href="#formations" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Formations</a>
+                        <a href="#resultats" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Résultats</a>
+                        <a href="#actualites" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Actualités</a>
+                        <a href="#contact" class="mobile-nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">Contact</a>
+                        <button onclick="showLoginModal()" class="bg-primary hover:bg-primaryHover text-white px-4 py-2 rounded-lg font-medium transition-colors text-left">
+                            <i class="fas fa-sign-in-alt mr-2"></i>
+                            Connexion
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="accueil" class="pt-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                                Complexe Scolaire 
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primaryHover">
+                                    Soleil d'Afrique
+                                </span>
+                            </h1>
+                            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+                                Excellence éducative depuis 2019 • Plus de 6000 élèves formés /ans
+                            </p>
+                            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                                Notre devise : <strong class="text-primary">Fraternité • Assiduité • Progrès</strong>
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="#formations" class="bg-primary hover:bg-primaryHover text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 text-center">
+                                    Découvrir nos formations
+                                </a>
+                                <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 text-center">
+                                    Nous contacter
+                                </a>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <div class="w-full h-96 bg-gradient-to-br from-primary to-primaryHover rounded-2xl shadow-2xl flex items-center justify-center">
+                                <div class="text-center text-white">
+                                    <i class="fas fa-graduation-cap text-8xl mb-4"></i>
+                                    <h3 class="text-2xl font-bold">Excellence Éducative</h3>
+                                    <p class="text-lg opacity-90">Formation de qualité au Tchad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- À Propos Section -->
+        <section id="a-propos" class="py-20 bg-white dark:bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">À Propos de Notre École</h2>
+                        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                            Fondé en 2019 par <strong>Mahamat Idriss Mahamat</strong> et dirigé par <strong>Oumar Abakar</strong>, 
+                            notre complexe scolaire est devenu une référence en matière d'éducation de qualité au Tchad.
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6">Notre Mission</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Offrir une éducation de qualité supérieure qui prépare nos élèves à exceller 
+                                dans leurs études et à devenir des citoyens responsables et engagés.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400">Formation complète de la maternelle au baccalauréat</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400">Encadrement pédagogique de qualité</p>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-1">
+                                        <i class="fas fa-check text-white text-xs"></i>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-400">Infrastructures modernes et adaptées</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-xl text-white text-center">
+                                <div class="text-3xl font-bold mb-2">6000+/ans</div>
+                                <div class="text-blue-100">Élèves formés</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-xl text-white text-center">
+                                <div class="text-3xl font-bold mb-2">5+</div>
+                                <div class="text-green-100">Années d'expérience</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-xl text-white text-center">
+                                <div class="text-3xl font-bold mb-2">100%</div>
+                                <div class="text-purple-100">Réussite BEPC</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-orange-500 to-orange-600 p-6 rounded-xl text-white text-center">
+                                <div class="text-3xl font-bold mb-2">70%+</div>
+                                <div class="text-orange-100">Réussite BAC</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formations Section -->
+        <section id="formations" class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos Formations</h2>
+                        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                            Un parcours éducatif complet de la maternelle au baccalauréat, 
+                            adapté aux besoins de chaque élève.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+                            <div class="w-20 h-20 bg-pink-100 dark:bg-pink-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-baby text-pink-600 dark:text-pink-400 text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Maternelle</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Éveil et développement des tout-petits dans un environnement bienveillant.
+                            </p>
+                            <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                                <li>• Petite Section</li>
+                                <li>• Moyenne Section</li>
+                                <li>• Grande Section</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+                            <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-child text-blue-600 dark:text-blue-400 text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Primaire</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Apprentissage des fondamentaux : lecture, écriture, mathématiques.
+                            </p>
+                            <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                                <li>• CP - CE1 - CE2</li>
+                                <li>• CM1 - CM2</li>
+                                <li>• Préparation au CEPE</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+                            <div class="w-20 h-20 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-user-graduate text-indigo-600 dark:text-indigo-400 text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Collège</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Consolidation des acquis et préparation au BEPC avec 100% de réussite.
+                            </p>
+                            <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                                <li>• 6ème - 5ème</li>
+                                <li>• 4ème - 3ème</li>
+                                <li>• Préparation BEPC</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 text-center">
+                            <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-graduation-cap text-purple-600 dark:text-purple-400 text-3xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-3">Lycée</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                Préparation au baccalauréat avec plus de 70% de réussite.
+                            </p>
+                            <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                                <li>• Seconde</li>
+                                <li>• Première - Terminale</li>
+                                <li>• Préparation BAC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Filières BAC -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                        <h3 class="text-2xl font-bold mb-8 text-center">Filières du Baccalauréat</h3>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-pencil-alt text-yellow-600 dark:text-yellow-400 text-3xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold mb-2">BAC A - Littéraire</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Français, Philosophie, Histoire-Géographie, Langues</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-flask text-green-600 dark:text-green-400 text-3xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold mb-2">BAC D - Sciences</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Mathématiques, Physique-Chimie, SVT</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-calculator text-blue-600 dark:text-blue-400 text-3xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold mb-2">BAC C - Mathématiques</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Mathématiques, Physique-Chimie, Sciences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Résultats Section -->
+        <section id="resultats" class="py-20 bg-white dark:bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos Résultats</h2>
+                        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                            Des résultats exceptionnels qui témoignent de notre engagement envers l'excellence éducative.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <div class="bg-gradient-to-br from-green-500 to-green-600 p-8 rounded-xl text-white text-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-trophy text-white text-2xl"></i>
+                            </div>
+                            <div class="text-4xl font-bold mb-2">100%</div>
+                            <div class="text-lg font-semibold mb-2">Réussite BEPC</div>
+                            <p class="text-green-100">Taux exceptionnel maintenu chaque année</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-xl text-white text-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                            </div>
+                            <div class="text-4xl font-bold mb-2">70%+</div>
+                            <div class="text-lg font-semibold mb-2">Réussite BAC</div>
+                            <p class="text-purple-100">Plus de 70% de réussite au Baccalauréat</p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-xl text-white text-center">
+                            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <div class="text-4xl font-bold mb-2">80%+</div>
+                            <div class="text-lg font-semibold mb-2">Autres Classes</div>
+                            <p class="text-blue-100">Excellence dans tous les niveaux</p>
+                        </div>
+                    </div>
+
+                    <!-- Activités Parascolaires -->
+                    <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6 text-center">Activités Parascolaires</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-futbol text-green-600 dark:text-green-400 text-2xl"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Tournoi Interclasse</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Football entre les classes de 6ème à Terminale</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-bus text-blue-600 dark:text-blue-400 text-2xl"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Sorties Scolaires</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Visites éducatives et découvertes culturelles</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-calendar-alt text-purple-600 dark:text-purple-400 text-2xl"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Événements</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Activités organisées par les élèves et l'administration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actualités Section -->
+        <section id="actualites" class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Actualités</h2>
+                        <p class="text-xl text-gray-600 dark:text-gray-300">
+                            Restez informés de la vie de notre école
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8" id="newsContainer">
+                        <!-- Les actualités seront chargées dynamiquement -->
+                        <div class="flex justify-center items-center h-64">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nous Contacter</h2>
+                        <p class="text-xl text-gray-600 dark:text-gray-300">
+                            Venez nous rendre visite ou contactez-nous pour plus d'informations
+                        </p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <div class="space-y-8">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Adresse</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Cartier Diguel, Rue de 40<br>N'Djaména, Tchad</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Téléphone</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">+235 66 22 23 40</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-user-tie text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Direction</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">M. Oumar Abakar - Directeur</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-clock text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-1">Horaires</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Lun-Ven: 7h00 - 13h00<br>Sam: 7h00 - 12h00</p>
+                                </div>
+                            </div>
+
+                            <!-- Réseaux Sociaux -->
+                            <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+                                <h3 class="font-semibold mb-4">Suivez-nous</h3>
+                                <div class="flex space-x-4">
+                                    <a href="https://www.facebook.com/share/1Cf76s6D7rm/?mibextid=wxX1fr" 
+                                       target="_blank" 
+                                       class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xl hover:bg-blue-700 transition-colors">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/cs_soleil_dafrique?igsh=NXA2d2Qwd2hrN25i&utm_source=qr" 
+                                       target="_blank" 
+                                       class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center text-white text-xl hover:bg-pink-600 transition-colors">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formulaire de Contact -->
+                        <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl">
+                            <h3 class="text-2xl font-semibold mb-6">Envoyez-nous un message</h3>
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Prénom</label>
+                                        <input type="text" id="firstName" class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Nom</label>
+                                        <input type="text" id="lastName" class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Téléphone</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    <span id="contactButtonText">Envoyer le message</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="col-span-2">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-10 h-10 bg-gradient-to-br from-primary to-primaryHover rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-sun text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold">CS Soleil d'Afrique</h3>
+                                    <p class="text-gray-400 text-sm">Excellence Éducative</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 mb-4">
+                                Complexe Scolaire Soleil d'Afrique - Excellence éducative au Tchad depuis 2019. 
+                                Notre devise : Fraternité • Assiduité • Progrès.
+                            </p>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/share/1Cf76s6D7rm/?mibextid=wxX1fr" target="_blank" class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/cs_soleil_dafrique?igsh=NXA2d2Qwd2hrN25i&utm_source=qr" target="_blank" class="w-10 h-10 bg-pink-500 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-4">Formations</h4>
+                            <ul class="space-y-2 text-gray-400">
+                                <li><a href="#formations" class="hover:text-white transition-colors">Maternelle</a></li>
+                                <li><a href="#formations" class="hover:text-white transition-colors">Primaire</a></li>
+                                <li><a href="#formations" class="hover:text-white transition-colors">Collège</a></li>
+                                <li><a href="#formations" class="hover:text-white transition-colors">Lycée</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-4">Contact</h4>
+                            <ul class="space-y-2 text-gray-400">
+                                <li>Cartier Diguel, Rue de 50</li>
+                                <li>N'Djaména, Tchad</li>
+                                <li>+235 66 22 23 40</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                        <p>&copy; 2024 Complexe Scolaire Soleil d'Afrique. Tous droits réservés.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Interface d'Administration -->
+    <div id="adminPanel" class="hidden min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div class="flex">
+            <!-- Sidebar -->
+            <div class="w-64 bg-white dark:bg-gray-800 shadow-lg">
+                <div class="p-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-primaryHover rounded-lg flex items-center justify-center">
+                            <i class="fas fa-sun text-white"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold">Administration</h2>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">CS Soleil d'Afrique</p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="mt-6">
+                    <div class="px-6 py-3">
+                        <h3 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Tableau de bord</h3>
+                    </div>
+                    <a href="#" onclick="showAdminSection('dashboard')" class="admin-nav-link flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border-r-4 border-primary">
+                        <i class="fas fa-chart-bar w-5 h-5 mr-3"></i>
+                        Tableau de bord
+                    </a>
+                    <a href="#" onclick="showAdminSection('visitors')" class="admin-nav-link flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-users w-5 h-5 mr-3"></i>
+                        Visiteurs
+                    </a>
+                    <a href="#" onclick="showAdminSection('messages')" class="admin-nav-link flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-envelope w-5 h-5 mr-3"></i>
+                        Messages
+                    </a>
+                    <a href="#" onclick="showAdminSection('news')" class="admin-nav-link flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-newspaper w-5 h-5 mr-3"></i>
+                        Actualités
+                    </a>
+                    <div class="px-6 py-3 mt-6">
+                        <h3 class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Compte</h3>
+                    </div>
+                    <a href="#" onclick="logout()" class="admin-nav-link flex items-center px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <i class="fas fa-sign-out-alt w-5 h-5 mr-3"></i>
+                        Déconnexion
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Contenu Principal -->
+            <div class="flex-1">
+                <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+                    <div class="px-6 py-4">
+                        <div class="flex items-center justify-between">
+                            <h1 id="adminPageTitle" class="text-2xl font-bold text-gray-900 dark:text-white">Tableau de bord</h1>
+                            <div class="flex items-center space-x-4">
+                                <span id="adminUserName" class="text-gray-600 dark:text-gray-400">Admin</span>
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-white text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="p-6">
+                    <!-- Dashboard -->
+                    <div id="dashboardSection" class="admin-section">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center">
+                                    <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                        <i class="fas fa-users text-blue-600 dark:text-blue-400"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-2xl font-semibold" id="totalVisitors">0</p>
+                                        <p class="text-gray-600 dark:text-gray-400">Visiteurs inscrits</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center">
+                                    <div class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                        <i class="fas fa-envelope text-green-600 dark:text-green-400"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-2xl font-semibold" id="totalMessages">0</p>
+                                        <p class="text-gray-600 dark:text-gray-400">Messages reçus</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center">
+                                    <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                                        <i class="fas fa-newspaper text-purple-600 dark:text-purple-400"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-2xl font-semibold" id="totalNews">0</p>
+                                        <p class="text-gray-600 dark:text-gray-400">Actualités</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                                <div class="flex items-center">
+                                    <div class="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
+                                        <i class="fas fa-chart-line text-yellow-600 dark:text-yellow-400"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-2xl font-semibold">6000+</p>
+                                        <p class="text-gray-600 dark:text-gray-400">Élèves formés/an</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-6">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-lg font-semibold mb-4">Derniers visiteurs inscrits</h3>
+                                <div id="recentVisitors" class="space-y-3">
+                                    <!-- Chargement dynamique -->
+                                </div>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                                <h3 class="text-lg font-semibold mb-4">Derniers messages</h3>
+                                <div id="recentMessages" class="space-y-3">
+                                    <!-- Chargement dynamique -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visiteurs -->
+                    <div id="visitorsSection" class="admin-section hidden">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                                <h3 class="text-lg font-semibold">Liste des visiteurs inscrits</h3>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                                    <thead class="bg-gray-50 dark:bg-gray-700">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Nom</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Email</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Téléphone</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date d'inscription</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="visitorsTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                                        <!-- Chargement dynamique -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Messages -->
+                    <div id="messagesSection" class="admin-section hidden">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                                <h3 class="text-lg font-semibold">Messages de contact</h3>
+                            </div>
+                            <div id="messagesList" class="divide-y divide-gray-200 dark:divide-gray-700">
+                                <!-- Chargement dynamique -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actualités -->
+                    <div id="newsSection" class="admin-section hidden">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+                            <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                                <h3 class="text-lg font-semibold">Gestion des actualités</h3>
+                                <button onclick="showNewsModal()" class="bg-primary hover:bg-primaryHover text-white px-4 py-2 rounded-lg font-medium">
+                                    <i class="fas fa-plus mr-2"></i>
+                                    Nouvelle actualité
+                                </button>
+                            </div>
+                            <div id="newsList" class="p-6">
+                                <!-- Chargement dynamique -->
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Connexion/Inscription -->
+    <div id="authModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl max-w-md w-full mx-4">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-primary to-primaryHover rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user text-white text-2xl"></i>
+                </div>
+                <h2 id="authModalTitle" class="text-2xl font-bold mb-2">Connexion</h2>
+                <p class="text-gray-600 dark:text-gray-400">Accédez à votre espace</p>
+            </div>
+
+            <!-- Onglets -->
+            <div class="flex mb-6 border-b border-gray-200 dark:border-gray-700">
+                <button id="loginTab" class="flex-1 py-2 px-4 text-primary border-b-2 border-primary font-semibold" onclick="switchAuthTab('login')">
+                    Connexion
+                </button>
+                <button id="registerTab" class="flex-1 py-2 px-4 text-gray-500 dark:text-gray-400" onclick="switchAuthTab('register')">
+                    Inscription
+                </button>
+            </div>
+
+            <!-- Formulaire de Connexion -->
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="loginEmail" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Mot de passe</label>
+                    <input type="password" id="loginPassword" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                    <span id="loginButtonText">Se connecter</span>
+                </button>
+            </form>
+
+            <!-- Formulaire d'Inscription -->
+            <form id="registerForm" class="space-y-4 hidden">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Prénom</label>
+                        <input type="text" id="registerFirstName" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Nom</label>
+                        <input type="text" id="registerLastName" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="registerEmail" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Téléphone</label>
+                    <input type="tel" id="registerPhone" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Mot de passe</label>
+                    <input type="password" id="registerPassword" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                </div>
+                <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                    <span id="registerButtonText">S'inscrire</span>
+                </button>
+            </form>
+
+            <button onclick="hideAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal d'actualité -->
+    <div id="newsModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl max-w-2xl w-full mx-4 max-h-screen overflow-y-auto">
+            <h3 class="text-2xl font-bold mb-6">Nouvelle actualité</h3>
+            <form id="newsForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Titre</label>
+                    <input type="text" id="newsTitle" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Date</label>
+                    <input type="date" id="newsDate" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Contenu</label>
+                    <textarea id="newsContent" rows="6" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required></textarea>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" onclick="hideNewsModal()" class="px-6 py-3 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+                        Annuler
+                    </button>
+                    <button type="submit" class="px-6 py-3 bg-primary hover:bg-primaryHover text-white rounded-lg font-semibold">
+                        <span id="newsButtonText">Publier</span>
+                    </button>
+                </div>
+            </form>
+            <button onclick="hideNewsModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script>
+        // Variables globales
+        let currentUser = null;
+        let isAdmin = false;
+
+        // Détection du mode sombre
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Menu mobile
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Fonctions d'authentification
+        function showLoginModal() {
+            document.getElementById('authModal').classList.remove('hidden');
+            switchAuthTab('login');
+        }
+
+        function hideAuthModal() {
+            document.getElementById('authModal').classList.add('hidden');
+        }
+
+        function switchAuthTab(tab) {
+            const loginTab = document.getElementById('loginTab');
+            const registerTab = document.getElementById('registerTab');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const modalTitle = document.getElementById('authModalTitle');
+
+            if (tab === 'login') {
+                loginTab.classList.add('text-primary', 'border-b-2', 'border-primary', 'font-semibold');
+                loginTab.classList.remove('text-gray-500');
+                registerTab.classList.remove('text-primary', 'border-b-2', 'border-primary', 'font-semibold');
+                registerTab.classList.add('text-gray-500');
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                modalTitle.textContent = 'Connexion';
+            } else {
+                registerTab.classList.add('text-primary', 'border-b-2', 'border-primary', 'font-semibold');
+                registerTab.classList.remove('text-gray-500');
+                loginTab.classList.remove('text-primary', 'border-b-2', 'border-primary', 'font-semibold');
+                loginTab.classList.add('text-gray-500');
+                registerForm.classList.remove('hidden');
+                loginForm.classList.add('hidden');
+                modalTitle.textContent = 'Inscription';
+            }
+        }
+
+        // Toggle user dropdown
+        function toggleUserDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const userMenu = document.getElementById('userMenu');
+            const dropdown = document.getElementById('userDropdown');
+            if (userMenu && !userMenu.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Gestion du formulaire de connexion
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const button = document.getElementById('loginButtonText');
+            
+            button.textContent = 'Connexion...';
+
+            try {
+                const result = await API.login(email, password);
+                if (result.success) {
+                    currentUser = result.user;
+                    isAdmin = result.user.role === 'admin';
+                    updateAuthUI();
+                    hideAuthModal();
+                    if (isAdmin) {
+                        showAdminPanel();
+                    } else {
+                        showSuccess('Connexion réussie ! Bienvenue ' + currentUser.first_name);
+                    }
+                } else {
+                    showError(result.message || 'Email ou mot de passe incorrect');
+                }
+            } catch (error) {
+                showError('Erreur de connexion');
+            }
+            
+            button.textContent = 'Se connecter';
+        });
+
+        // Gestion du formulaire d'inscription
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('registerFirstName').value;
+            const lastName = document.getElementById('registerLastName').value;
+            const email = document.getElementById('registerEmail').value;
+            const phone = document.getElementById('registerPhone').value;
+            const password = document.getElementById('registerPassword').value;
+            const button = document.getElementById('registerButtonText');
+            
+            button.textContent = 'Inscription...';
+
+            try {
+                const result = await API.register(firstName, lastName, email, phone, password);
+                if (result.success) {
+                    currentUser = result.user;
+                    updateAuthUI();
+                    hideAuthModal();
+                    showSuccess('Inscription réussie ! Bienvenue ' + firstName + ' !');
+                } else {
+                    showError(result.message || 'Erreur lors de l\'inscription');
+                }
+            } catch (error) {
+                showError('Erreur lors de l\'inscription');
+            }
+            
+            button.textContent = 'S\'inscrire';
+        });
+
+        // Gestion du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            const button = document.getElementById('contactButtonText');
+            
+            button.textContent = 'Envoi...';
+
+            try {
+                const result = await API.sendMessage(firstName, lastName, email, phone, message);
+                if (result.success) {
+                    this.reset();
+                    showSuccess('Message envoyé avec succès ! Nous vous répondrons bientôt.');
+                } else {
+                    showError('Erreur lors de l\'envoi du message');
+                }
+            } catch (error) {
+                showError('Erreur lors de l\'envoi du message');
+            }
+            
+            button.textContent = 'Envoyer le message';
+        });
+
+        // Mise à jour de l'interface d'authentification
+        function updateAuthUI() {
+            if (currentUser) {
+                document.getElementById('authButtons').classList.add('hidden');
+                document.getElementById('userMenu').classList.remove('hidden');
+                document.getElementById('userNameNav').textContent = currentUser.first_name;
+                
+                if (isAdmin) {
+                    document.getElementById('adminMenuItem').classList.remove('hidden');
+                }
+            } else {
+                document.getElementById('authButtons').classList.remove('hidden');
+                document.getElementById('userMenu').classList.add('hidden');
+                document.getElementById('adminMenuItem').classList.add('hidden');
+            }
+        }
+
+        // Fonctions d'administration
+        function showAdminPanel() {
+            document.getElementById('publicSite').classList.add('hidden');
+            document.getElementById('adminPanel').classList.remove('hidden');
+            document.getElementById('adminUserName').textContent = currentUser.first_name + ' ' + currentUser.last_name;
+            showAdminSection('dashboard');
+        }
+
+        function showAdminSection(section) {
+            document.querySelectorAll('.admin-section').forEach(s => s.classList.add('hidden'));
+            document.querySelectorAll('.admin-nav-link').forEach(link => {
+                link.classList.remove('border-r-4', 'border-primary');
+            });
+            
+            document.getElementById(section + 'Section').classList.remove('hidden');
+            event.target.closest('.admin-nav-link').classList.add('border-r-4', 'border-primary');
+            
+            const titles = {
+                dashboard: 'Tableau de bord',
+                visitors: 'Gestion des visiteurs',
+                messages: 'Messages de contact',
+                news: 'Gestion des actualités'
+            };
+            document.getElementById('adminPageTitle').textContent = titles[section];
+            
+            // Charger les données
+            if (section === 'dashboard') loadDashboard();
+            if (section === 'visitors') loadVisitors();
+            if (section === 'messages') loadMessages();
+            if (section === 'news') loadNews();
+        }
+
+        // Charger les données du dashboard
+        async function loadDashboard() {
+            try {
+                const stats = await API.getStats();
+                document.getElementById('totalVisitors').textContent = stats.visitors;
+                document.getElementById('totalMessages').textContent = stats.messages;
+                document.getElementById('totalNews').textContent = stats.news;
+                
+                const recentVisitors = await API.getRecentVisitors();
+                const recentMessages = await API.getRecentMessages();
+                
+                displayRecentVisitors(recentVisitors);
+                displayRecentMessages(recentMessages);
+            } catch (error) {
+                console.error('Erreur lors du chargement du dashboard:', error);
+            }
+        }
+
+        // Charger les visiteurs
+        async function loadVisitors() {
+            try {
+                const visitors = await API.getVisitors();
+                displayVisitors(visitors);
+            } catch (error) {
+                console.error('Erreur lors du chargement des visiteurs:', error);
+            }
+        }
+
+        // Charger les messages
+        async function loadMessages() {
+            try {
+                const messages = await API.getMessages();
+                displayMessages(messages);
+            } catch (error) {
+                console.error('Erreur lors du chargement des messages:', error);
+            }
+        }
+
+        // Charger les actualités
+        async function loadNews() {
+            try {
+                const news = await API.getNews();
+                displayNews(news);
+                displayPublicNews(news.filter(n => n.is_published));
+            } catch (error) {
+                console.error('Erreur lors du chargement des actualités:', error);
+            }
+        }
+
+        // Afficher les visiteurs récents
+        function displayRecentVisitors(visitors) {
+            const container = document.getElementById('recentVisitors');
+            container.innerHTML = visitors.map(visitor => `
+                <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">${visitor.first_name} ${visitor.last_name}</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">${visitor.email}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Afficher les messages récents
+        function displayRecentMessages(messages) {
+            const container = document.getElementById('recentMessages');
+            container.innerHTML = messages.map(message => `
+                <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <p class="font-medium mb-1">${message.first_name} ${message.last_name}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">${message.message.substring(0, 100)}...</p>
+                </div>
+            `).join('');
+        }
+
+        // Afficher les visiteurs
+        function displayVisitors(visitors) {
+            const container = document.getElementById('visitorsTable');
+            container.innerHTML = visitors.map(visitor => `
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-gray-900 dark:text-white">${visitor.first_name} ${visitor.last_name}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 dark:text-white">${visitor.email}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 dark:text-white">${visitor.phone || '-'}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 dark:text-white">${new Date(visitor.created_at).toLocaleDateString('fr-FR')}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="deleteVisitor(${visitor.id})" class="text-red-600 hover:text-red-900">Supprimer</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Afficher les messages
+        function displayMessages(messages) {
+            const container = document.getElementById('messagesList');
+            container.innerHTML = messages.map(message => `
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-semibold">${message.first_name} ${message.last_name}</h4>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">${new Date(message.created_at).toLocaleDateString('fr-FR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        })}</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">De: ${message.email}${message.phone ? ' - Tel: ' + message.phone : ''}</p>
+                    <p class="text-gray-700 dark:text-gray-300">${message.message}</p>
+                    <div class="mt-4 flex space-x-3">
+                        <button onclick="deleteMessage(${message.id})" class="text-red-600 hover:text-red-800 text-sm">Supprimer</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Afficher les actualités
+        function displayNews(news) {
+            const container = document.getElementById('newsList');
+            container.innerHTML = `
+                <div class="space-y-4">
+                    ${news.map(article => `
+                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-semibold">${article.title}</h4>
+                                <div class="flex space-x-2">
+                                    <button onclick="editNews(${article.id})" class="text-blue-600 hover:text-blue-800">Modifier</button>
+                                    <button onclick="deleteNews(${article.id})" class="text-red-600 hover:text-red-800">Supprimer</button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">${new Date(article.publication_date).toLocaleDateString('fr-FR')}</p>
+                            <p class="text-gray-700 dark:text-gray-300">${article.content.substring(0, 200)}...</p>
+                            <div class="mt-2">
+                                <span class="px-2 py-1 text-xs rounded-full ${article.is_published ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">
+                                    ${article.is_published ? 'Publié' : 'Brouillon'}
+                                </span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Afficher les actualités publiques
+        function displayPublicNews(news) {
+            const container = document.getElementById('newsContainer');
+            container.innerHTML = news.map(article => `
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>${new Date(article.publication_date).toLocaleDateString('fr-FR')}</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">${article.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            ${article.content.substring(0, 150)}...
+                        </p>
+                        <div class="text-primary font-medium">Lire la suite →</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Modals et formulaires
+        function showNewsModal() {
+            document.getElementById('newsModal').classList.remove('hidden');
+        }
+
+        function hideNewsModal() {
+            document.getElementById('newsModal').classList.add('hidden');
+            document.getElementById('newsForm').reset();
+        }
+
+        document.getElementById('newsForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const title = document.getElementById('newsTitle').value;
+            const date = document.getElementById('newsDate').value;
+            const content = document.getElementById('newsContent').value;
+            const button = document.getElementById('newsButtonText');
+            
+            button.textContent = 'Publication...';
+
+            try {
+                const result = await API.createNews(title, content, date);
+                if (result.success) {
+                    hideNewsModal();
+                    showSuccess('Actualité publiée avec succès !');
+                    loadNews();
+                } else {
+                    showError('Erreur lors de la publication');
+                }
+            } catch (error) {
+                showError('Erreur lors de la publication');
+            }
+            
+            button.textContent = 'Publier';
+        });
+
+        // Fonctions de suppression
+        async function deleteVisitor(id) {
+            if (await showConfirm('Êtes-vous sûr de vouloir supprimer ce visiteur ?')) {
+                try {
+                    await API.deleteVisitor(id);
+                    showSuccess('Visiteur supprimé');
+                    loadVisitors();
+                } catch (error) {
+                    showError('Erreur lors de la suppression');
+                }
+            }
+        }
+
+        async function deleteMessage(id) {
+            if (await showConfirm('Êtes-vous sûr de vouloir supprimer ce message ?')) {
+                try {
+                    await API.deleteMessage(id);
+                    showSuccess('Message supprimé');
+                    loadMessages();
+                } catch (error) {
+                    showError('Erreur lors de la suppression');
+                }
+            }
+        }
+
+        async function deleteNews(id) {
+            if (await showConfirm('Êtes-vous sûr de vouloir supprimer cette actualité ?')) {
+                try {
+                    await API.deleteNews(id);
+                    showSuccess('Actualité supprimée');
+                    loadNews();
+                } catch (error) {
+                    showError('Erreur lors de la suppression');
+                }
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            isAdmin = false;
+            updateAuthUI();
+            document.getElementById('adminPanel').classList.add('hidden');
+            document.getElementById('publicSite').classList.remove('hidden');
+            showSuccess('Déconnexion réussie');
+        }
+
+        // Fonctions utilitaires
+        function showSuccess(message) {
+            showNotification(message, 'success');
+        }
+
+        function showError(message) {
+            showNotification(message, 'error');
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm ${
+                type === 'success' 
+                    ? 'bg-green-500 text-white' 
+                    : 'bg-red-500 text-white'
+            }`;
+            notification.innerHTML = `
+                <div class="flex items-center space-x-2">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        function showConfirm(message) {
+            return new Promise((resolve) => {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                modal.innerHTML = `
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full mx-4">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">${message}</p>
+                        <div class="flex justify-end space-x-3">
+                            <button onclick="this.closest('.fixed').remove(); window.confirmResult(false)" class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Annuler</button>
+                            <button onclick="this.closest('.fixed').remove(); window.confirmResult(true)" class="px-4 py-2 bg-red-500 text-white hover:bg-red-600 rounded">Confirmer</button>
+                        </div>
+                    </div>
+                `;
+                
+                window.confirmResult = resolve;
+                document.body.appendChild(modal);
+            });
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', async function() {
+            updateAuthUI();
+            
+            // Charger les actualités publiques
+            try {
+                const news = await API.getNews();
+                displayPublicNews(news.filter(n => n.is_published));
+            } catch (error) {
+                console.error('Erreur lors du chargement des actualités:', error);
+                document.getElementById('newsContainer').innerHTML = `
+                    <div class="col-span-3 text-center text-gray-500 dark:text-gray-400">
+                        Erreur lors du chargement des actualités
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
