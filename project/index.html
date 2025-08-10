@@ -389,46 +389,9 @@
                     </div>
 
                     <div class="grid md:grid-cols-3 gap-8" id="newsContainer">
-                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                                    <i class="fas fa-calendar"></i>
-                                    <span>15 septembre 2025</span>
-                                </div>
-                                <h3 class="text-lg font-semibold mb-3">Rentrée Scolaire 2025</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    La rentrée scolaire 2025 se déroulera dans d'excellentes conditions. Inscriptions ouvertes pour tous les niveaux.
-                                </p>
-                                <div class="text-primary font-medium">Lire la suite →</div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                                    <i class="fas fa-calendar"></i>
-                                    <span>10 Janvier 2024</span>
-                                </div>
-                                <h3 class="text-lg font-semibold mb-3">Résultats Exceptionnels 2023</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    Nous sommes fiers d'annoncer 100% de réussite au BEPC et plus de 70% au Baccalauréat pour l'année 2023.
-                                </p>
-                                <div class="text-primary font-medium">Lire la suite →</div>
-                            </div>
-                        </div>
-
-                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
-                            <div class="p-6">
-                                <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                                    <i class="fas fa-calendar"></i>
-                                    <span>A venir</span>
-                                </div>
-                                <h3 class="text-lg font-semibold mb-3">Nouveau Laboratoire Informatique</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                                    Nous travaillons sur l'informatique et nous nous préparons à inaugurer notre nouveau laboratoire prochainement.
-                                </p>
-                                <div class="text-primary font-medium">Lire la suite →</div>
-                            </div>
+                        <!-- Les actualités seront chargées dynamiquement -->
+                        <div class="flex justify-center items-center h-64">
+                            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
                         </div>
                     </div>
                 </div>
@@ -454,7 +417,7 @@
                                 </div>
                                 <div>
                                     <h3 class="font-semibold mb-1">Adresse</h3>
-                                    <p class="text-gray-600 dark:text-gray-400">Cartier Diguel, Rue de 50<br>N'Djaména, Tchad</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Cartier Diguel, Rue de 40<br>N'Djaména, Tchad</p>
                                 </div>
                             </div>
 
@@ -492,13 +455,11 @@
                             <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
                                 <h3 class="font-semibold mb-4">Suivez-nous</h3>
                                 <div class="flex space-x-4">
-                                    <!-- Facebook -->
                                     <a href="https://www.facebook.com/share/1Cf76s6D7rm/?mibextid=wxX1fr" 
                                        target="_blank" 
                                        class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xl hover:bg-blue-700 transition-colors">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
-                                    <!-- Instagram -->
                                     <a href="https://www.instagram.com/cs_soleil_dafrique?igsh=NXA2d2Qwd2hrN25i&utm_source=qr" 
                                        target="_blank" 
                                        class="w-12 h-12 bg-pink-500 rounded-lg flex items-center justify-center text-white text-xl hover:bg-pink-600 transition-colors">
@@ -536,7 +497,7 @@
                                 </div>
                                 <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                                     <i class="fas fa-paper-plane mr-2"></i>
-                                    Envoyer le message
+                                    <span id="contactButtonText">Envoyer le message</span>
                                 </button>
                             </form>
                         </div>
@@ -671,7 +632,7 @@
                                         <i class="fas fa-users text-blue-600 dark:text-blue-400"></i>
                                     </div>
                                     <div class="ml-4">
-                                        <p class="text-2xl font-semibold" id="totalVisitors">127</p>
+                                        <p class="text-2xl font-semibold" id="totalVisitors">0</p>
                                         <p class="text-gray-600 dark:text-gray-400">Visiteurs inscrits</p>
                                     </div>
                                 </div>
@@ -682,7 +643,7 @@
                                         <i class="fas fa-envelope text-green-600 dark:text-green-400"></i>
                                     </div>
                                     <div class="ml-4">
-                                        <p class="text-2xl font-semibold" id="totalMessages">43</p>
+                                        <p class="text-2xl font-semibold" id="totalMessages">0</p>
                                         <p class="text-gray-600 dark:text-gray-400">Messages reçus</p>
                                     </div>
                                 </div>
@@ -693,7 +654,7 @@
                                         <i class="fas fa-newspaper text-purple-600 dark:text-purple-400"></i>
                                     </div>
                                     <div class="ml-4">
-                                        <p class="text-2xl font-semibold" id="totalNews">3</p>
+                                        <p class="text-2xl font-semibold" id="totalNews">0</p>
                                         <p class="text-gray-600 dark:text-gray-400">Actualités</p>
                                     </div>
                                 </div>
@@ -715,37 +676,13 @@
                             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                                 <h3 class="text-lg font-semibold mb-4">Derniers visiteurs inscrits</h3>
                                 <div id="recentVisitors" class="space-y-3">
-                                    <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                                            <i class="fas fa-user text-white text-sm"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-medium">Ahmed Moussa</p>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">ahmed@example.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                                            <i class="fas fa-user text-white text-sm"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-medium">Fatima Ali</p>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">fatima@example.com</p>
-                                        </div>
-                                    </div>
+                                    <!-- Chargement dynamique -->
                                 </div>
                             </div>
                             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
                                 <h3 class="text-lg font-semibold mb-4">Derniers messages</h3>
                                 <div id="recentMessages" class="space-y-3">
-                                    <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                        <p class="font-medium mb-1">Demande d'information</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-400">Bonjour, je souhaite avoir des informations sur...</p>
-                                    </div>
-                                    <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                                        <p class="font-medium mb-1">Inscription élève</p>
-                                        <p class="text-sm text-gray-500 dark:text-gray-400">Je voudrais inscrire mon enfant pour la prochaine...</p>
-                                    </div>
+                                    <!-- Chargement dynamique -->
                                 </div>
                             </div>
                         </div>
@@ -769,40 +706,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="visitorsTable" class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
-                                        <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm font-medium text-gray-900 dark:text-white">Ahmed Moussa</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900 dark:text-white">ahmed@example.com</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900 dark:text-white">+235 66 11 22 33</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900 dark:text-white">15/01/2024</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <button class="text-red-600 hover:text-red-900">Supprimer</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm font-medium text-gray-900 dark:text-white">Fatima Ali</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900 dark:text-white">fatima@example.com</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900 dark:text-white">+235 66 44 55 66</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm text-gray-900 dark:text-white">14/01/2024</div>
-                                            </td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                                <button class="text-red-600 hover:text-red-900">Supprimer</button>
-                                            </td>
-                                        </tr>
+                                        <!-- Chargement dynamique -->
                                     </tbody>
                                 </table>
                             </div>
@@ -816,30 +720,7 @@
                                 <h3 class="text-lg font-semibold">Messages de contact</h3>
                             </div>
                             <div id="messagesList" class="divide-y divide-gray-200 dark:divide-gray-700">
-                                <div class="p-6">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h4 class="font-semibold">Demande d'information</h4>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">15/01/2024 - 14:30</span>
-                                    </div>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">De: Ahmed Moussa (ahmed@example.com) - Tel: +235 66 11 22 33</p>
-                                    <p class="text-gray-700 dark:text-gray-300">Bonjour, je souhaite avoir des informations sur les programmes de formation pour le niveau lycée. Pouvez-vous me contacter pour plus de détails sur les filières disponibles et les conditions d'admission ?</p>
-                                    <div class="mt-4 flex space-x-3">
-                                        <button class="text-blue-600 hover:text-blue-800 text-sm">Répondre</button>
-                                        <button class="text-red-600 hover:text-red-800 text-sm">Supprimer</button>
-                                    </div>
-                                </div>
-                                <div class="p-6">
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h4 class="font-semibold">Inscription élève</h4>
-                                        <span class="text-sm text-gray-500 dark:text-gray-400">14/01/2024 - 10:15</span>
-                                    </div>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">De: Fatima Ali (fatima@example.com) - Tel: +235 66 44 55 66</p>
-                                    <p class="text-gray-700 dark:text-gray-300">Je voudrais inscrire mon enfant pour la prochaine rentrée scolaire en classe de 6ème. Quelles sont les démarches à suivre et les documents nécessaires ? Merci de me tenir informée.</p>
-                                    <div class="mt-4 flex space-x-3">
-                                        <button class="text-blue-600 hover:text-blue-800 text-sm">Répondre</button>
-                                        <button class="text-red-600 hover:text-red-800 text-sm">Supprimer</button>
-                                    </div>
-                                </div>
+                                <!-- Chargement dynamique -->
                             </div>
                         </div>
                     </div>
@@ -855,30 +736,7 @@
                                 </button>
                             </div>
                             <div id="newsList" class="p-6">
-                                <div class="space-y-4">
-                                    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <h4 class="font-semibold">Rentrée Scolaire 2025</h4>
-                                            <div class="flex space-x-2">
-                                                <button class="text-blue-600 hover:text-blue-800">Modifier</button>
-                                                <button class="text-red-600 hover:text-red-800">Supprimer</button>
-                                            </div>
-                                        </div>
-                                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">15 septembre 2025</p>
-                                        <p class="text-gray-700 dark:text-gray-300">La rentrée scolaire 2025 se déroulera dans d'excellentes conditions. Inscriptions ouvertes pour tous les niveaux...</p>
-                                    </div>
-                                    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <h4 class="font-semibold">Résultats Exceptionnels 2023</h4>
-                                            <div class="flex space-x-2">
-                                                <button class="text-blue-600 hover:text-blue-800">Modifier</button>
-                                                <button class="text-red-600 hover:text-red-800">Supprimer</button>
-                                            </div>
-                                        </div>
-                                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">10 Janvier 2024</p>
-                                        <p class="text-gray-700 dark:text-gray-300">Nous sommes fiers d'annoncer 100% de réussite au BEPC et plus de 70% au Baccalauréat...</p>
-                                    </div>
-                                </div>
+                                <!-- Chargement dynamique -->
                             </div>
                         </div>
                     </div>
@@ -912,19 +770,14 @@
             <form id="loginForm" class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium mb-2">Email</label>
-                    <input type="email" id="loginEmail" value="admin@soleil-afrique.com" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
+                    <input type="email" id="loginEmail" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-2">Mot de passe</label>
-                    <input type="password" id="loginPassword" value="admin123" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
-                </div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">
-                    <p><strong>Comptes de test :</strong></p>
-                    <p>Admin: admin@soleil-afrique.com / admin123</p>
-                    <p>Visiteur: visiteur@example.com / password</p>
+                    <input type="password" id="loginPassword" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
                 </div>
                 <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                    Se connecter
+                    <span id="loginButtonText">Se connecter</span>
                 </button>
             </form>
 
@@ -953,7 +806,7 @@
                     <input type="password" id="registerPassword" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base" required>
                 </div>
                 <button type="submit" class="w-full bg-primary hover:bg-primaryHover text-white px-6 py-3 rounded-lg font-semibold transition-colors">
-                    S'inscrire
+                    <span id="registerButtonText">S'inscrire</span>
                 </button>
             </form>
 
@@ -985,7 +838,7 @@
                         Annuler
                     </button>
                     <button type="submit" class="px-6 py-3 bg-primary hover:bg-primaryHover text-white rounded-lg font-semibold">
-                        Publier
+                        <span id="newsButtonText">Publier</span>
                     </button>
                 </div>
             </form>
@@ -995,6 +848,8 @@
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
     <script>
         // Variables globales
         let currentUser = null;
@@ -1028,7 +883,6 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Fermer le menu mobile
                     document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
@@ -1090,9 +944,12 @@
             e.preventDefault();
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
+            const button = document.getElementById('loginButtonText');
+            
+            button.textContent = 'Connexion...';
 
             try {
-                const result = await loginUser(email, password);
+                const result = await API.login(email, password);
                 if (result.success) {
                     currentUser = result.user;
                     isAdmin = result.user.role === 'admin';
@@ -1101,14 +958,16 @@
                     if (isAdmin) {
                         showAdminPanel();
                     } else {
-                        showSuccess('Connexion réussie ! Bienvenue ' + currentUser.firstName);
+                        showSuccess('Connexion réussie ! Bienvenue ' + currentUser.first_name);
                     }
                 } else {
-                    showError('Email ou mot de passe incorrect');
+                    showError(result.message || 'Email ou mot de passe incorrect');
                 }
             } catch (error) {
                 showError('Erreur de connexion');
             }
+            
+            button.textContent = 'Se connecter';
         });
 
         // Gestion du formulaire d'inscription
@@ -1119,9 +978,12 @@
             const email = document.getElementById('registerEmail').value;
             const phone = document.getElementById('registerPhone').value;
             const password = document.getElementById('registerPassword').value;
+            const button = document.getElementById('registerButtonText');
+            
+            button.textContent = 'Inscription...';
 
             try {
-                const result = await registerUser(firstName, lastName, email, phone, password);
+                const result = await API.register(firstName, lastName, email, phone, password);
                 if (result.success) {
                     currentUser = result.user;
                     updateAuthUI();
@@ -1133,6 +995,8 @@
             } catch (error) {
                 showError('Erreur lors de l\'inscription');
             }
+            
+            button.textContent = 'S\'inscrire';
         });
 
         // Gestion du formulaire de contact
@@ -1143,9 +1007,12 @@
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
+            const button = document.getElementById('contactButtonText');
+            
+            button.textContent = 'Envoi...';
 
             try {
-                const result = await sendMessage(firstName, lastName, email, phone, message);
+                const result = await API.sendMessage(firstName, lastName, email, phone, message);
                 if (result.success) {
                     this.reset();
                     showSuccess('Message envoyé avec succès ! Nous vous répondrons bientôt.');
@@ -1155,72 +1022,16 @@
             } catch (error) {
                 showError('Erreur lors de l\'envoi du message');
             }
+            
+            button.textContent = 'Envoyer le message';
         });
-
-        // Fonctions API simulées
-        async function loginUser(email, password) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            if (email === 'admin@soleil-afrique.com' && password === 'admin123') {
-                return {
-                    success: true,
-                    user: {
-                        id: 1,
-                        firstName: 'Admin',
-                        lastName: 'Système',
-                        email: email,
-                        role: 'admin'
-                    }
-                };
-            }
-            
-            if (email === 'visiteur@example.com' && password === 'password') {
-                return {
-                    success: true,
-                    user: {
-                        id: 2,
-                        firstName: 'Visiteur',
-                        lastName: 'Test',
-                        email: email,
-                        role: 'visitor'
-                    }
-                };
-            }
-            
-            return { success: false };
-        }
-
-        async function registerUser(firstName, lastName, email, phone, password) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            if (email === 'admin@soleil-afrique.com') {
-                return { success: false, message: 'Cet email est déjà utilisé' };
-            }
-            
-            return {
-                success: true,
-                user: {
-                    id: Date.now(),
-                    firstName,
-                    lastName,
-                    email,
-                    phone,
-                    role: 'visitor'
-                }
-            };
-        }
-
-        async function sendMessage(firstName, lastName, email, phone, message) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            return { success: true };
-        }
 
         // Mise à jour de l'interface d'authentification
         function updateAuthUI() {
             if (currentUser) {
                 document.getElementById('authButtons').classList.add('hidden');
                 document.getElementById('userMenu').classList.remove('hidden');
-                document.getElementById('userNameNav').textContent = currentUser.firstName;
+                document.getElementById('userNameNav').textContent = currentUser.first_name;
                 
                 if (isAdmin) {
                     document.getElementById('adminMenuItem').classList.remove('hidden');
@@ -1236,7 +1047,7 @@
         function showAdminPanel() {
             document.getElementById('publicSite').classList.add('hidden');
             document.getElementById('adminPanel').classList.remove('hidden');
-            document.getElementById('adminUserName').textContent = currentUser.firstName + ' ' + currentUser.lastName;
+            document.getElementById('adminUserName').textContent = currentUser.first_name + ' ' + currentUser.last_name;
             showAdminSection('dashboard');
         }
 
@@ -1256,8 +1067,186 @@
                 news: 'Gestion des actualités'
             };
             document.getElementById('adminPageTitle').textContent = titles[section];
+            
+            // Charger les données
+            if (section === 'dashboard') loadDashboard();
+            if (section === 'visitors') loadVisitors();
+            if (section === 'messages') loadMessages();
+            if (section === 'news') loadNews();
         }
 
+        // Charger les données du dashboard
+        async function loadDashboard() {
+            try {
+                const stats = await API.getStats();
+                document.getElementById('totalVisitors').textContent = stats.visitors;
+                document.getElementById('totalMessages').textContent = stats.messages;
+                document.getElementById('totalNews').textContent = stats.news;
+                
+                const recentVisitors = await API.getRecentVisitors();
+                const recentMessages = await API.getRecentMessages();
+                
+                displayRecentVisitors(recentVisitors);
+                displayRecentMessages(recentMessages);
+            } catch (error) {
+                console.error('Erreur lors du chargement du dashboard:', error);
+            }
+        }
+
+        // Charger les visiteurs
+        async function loadVisitors() {
+            try {
+                const visitors = await API.getVisitors();
+                displayVisitors(visitors);
+            } catch (error) {
+                console.error('Erreur lors du chargement des visiteurs:', error);
+            }
+        }
+
+        // Charger les messages
+        async function loadMessages() {
+            try {
+                const messages = await API.getMessages();
+                displayMessages(messages);
+            } catch (error) {
+                console.error('Erreur lors du chargement des messages:', error);
+            }
+        }
+
+        // Charger les actualités
+        async function loadNews() {
+            try {
+                const news = await API.getNews();
+                displayNews(news);
+                displayPublicNews(news.filter(n => n.is_published));
+            } catch (error) {
+                console.error('Erreur lors du chargement des actualités:', error);
+            }
+        }
+
+        // Afficher les visiteurs récents
+        function displayRecentVisitors(visitors) {
+            const container = document.getElementById('recentVisitors');
+            container.innerHTML = visitors.map(visitor => `
+                <div class="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium">${visitor.first_name} ${visitor.last_name}</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">${visitor.email}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Afficher les messages récents
+        function displayRecentMessages(messages) {
+            const container = document.getElementById('recentMessages');
+            container.innerHTML = messages.map(message => `
+                <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <p class="font-medium mb-1">${message.first_name} ${message.last_name}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">${message.message.substring(0, 100)}...</p>
+                </div>
+            `).join('');
+        }
+
+        // Afficher les visiteurs
+        function displayVisitors(visitors) {
+            const container = document.getElementById('visitorsTable');
+            container.innerHTML = visitors.map(visitor => `
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-gray-900 dark:text-white">${visitor.first_name} ${visitor.last_name}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 dark:text-white">${visitor.email}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 dark:text-white">${visitor.phone || '-'}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm text-gray-900 dark:text-white">${new Date(visitor.created_at).toLocaleDateString('fr-FR')}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="deleteVisitor(${visitor.id})" class="text-red-600 hover:text-red-900">Supprimer</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Afficher les messages
+        function displayMessages(messages) {
+            const container = document.getElementById('messagesList');
+            container.innerHTML = messages.map(message => `
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-semibold">${message.first_name} ${message.last_name}</h4>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">${new Date(message.created_at).toLocaleDateString('fr-FR', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        })}</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">De: ${message.email}${message.phone ? ' - Tel: ' + message.phone : ''}</p>
+                    <p class="text-gray-700 dark:text-gray-300">${message.message}</p>
+                    <div class="mt-4 flex space-x-3">
+                        <button onclick="deleteMessage(${message.id})" class="text-red-600 hover:text-red-800 text-sm">Supprimer</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Afficher les actualités
+        function displayNews(news) {
+            const container = document.getElementById('newsList');
+            container.innerHTML = `
+                <div class="space-y-4">
+                    ${news.map(article => `
+                        <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-semibold">${article.title}</h4>
+                                <div class="flex space-x-2">
+                                    <button onclick="editNews(${article.id})" class="text-blue-600 hover:text-blue-800">Modifier</button>
+                                    <button onclick="deleteNews(${article.id})" class="text-red-600 hover:text-red-800">Supprimer</button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">${new Date(article.publication_date).toLocaleDateString('fr-FR')}</p>
+                            <p class="text-gray-700 dark:text-gray-300">${article.content.substring(0, 200)}...</p>
+                            <div class="mt-2">
+                                <span class="px-2 py-1 text-xs rounded-full ${article.is_published ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">
+                                    ${article.is_published ? 'Publié' : 'Brouillon'}
+                                </span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Afficher les actualités publiques
+        function displayPublicNews(news) {
+            const container = document.getElementById('newsContainer');
+            container.innerHTML = news.map(article => `
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <i class="fas fa-calendar"></i>
+                            <span>${new Date(article.publication_date).toLocaleDateString('fr-FR')}</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-3">${article.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            ${article.content.substring(0, 150)}...
+                        </p>
+                        <div class="text-primary font-medium">Lire la suite →</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Modals et formulaires
         function showNewsModal() {
             document.getElementById('newsModal').classList.remove('hidden');
         }
@@ -1272,15 +1261,62 @@
             const title = document.getElementById('newsTitle').value;
             const date = document.getElementById('newsDate').value;
             const content = document.getElementById('newsContent').value;
+            const button = document.getElementById('newsButtonText');
+            
+            button.textContent = 'Publication...';
 
             try {
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                hideNewsModal();
-                showSuccess('Actualité publiée avec succès !');
+                const result = await API.createNews(title, content, date);
+                if (result.success) {
+                    hideNewsModal();
+                    showSuccess('Actualité publiée avec succès !');
+                    loadNews();
+                } else {
+                    showError('Erreur lors de la publication');
+                }
             } catch (error) {
                 showError('Erreur lors de la publication');
             }
+            
+            button.textContent = 'Publier';
         });
+
+        // Fonctions de suppression
+        async function deleteVisitor(id) {
+            if (await showConfirm('Êtes-vous sûr de vouloir supprimer ce visiteur ?')) {
+                try {
+                    await API.deleteVisitor(id);
+                    showSuccess('Visiteur supprimé');
+                    loadVisitors();
+                } catch (error) {
+                    showError('Erreur lors de la suppression');
+                }
+            }
+        }
+
+        async function deleteMessage(id) {
+            if (await showConfirm('Êtes-vous sûr de vouloir supprimer ce message ?')) {
+                try {
+                    await API.deleteMessage(id);
+                    showSuccess('Message supprimé');
+                    loadMessages();
+                } catch (error) {
+                    showError('Erreur lors de la suppression');
+                }
+            }
+        }
+
+        async function deleteNews(id) {
+            if (await showConfirm('Êtes-vous sûr de vouloir supprimer cette actualité ?')) {
+                try {
+                    await API.deleteNews(id);
+                    showSuccess('Actualité supprimée');
+                    loadNews();
+                } catch (error) {
+                    showError('Erreur lors de la suppression');
+                }
+            }
+        }
 
         function logout() {
             currentUser = null;
@@ -1321,9 +1357,41 @@
             }, 3000);
         }
 
+        function showConfirm(message) {
+            return new Promise((resolve) => {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                modal.innerHTML = `
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full mx-4">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">${message}</p>
+                        <div class="flex justify-end space-x-3">
+                            <button onclick="this.closest('.fixed').remove(); window.confirmResult(false)" class="px-4 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Annuler</button>
+                            <button onclick="this.closest('.fixed').remove(); window.confirmResult(true)" class="px-4 py-2 bg-red-500 text-white hover:bg-red-600 rounded">Confirmer</button>
+                        </div>
+                    </div>
+                `;
+                
+                window.confirmResult = resolve;
+                document.body.appendChild(modal);
+            });
+        }
+
         // Initialisation
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', async function() {
             updateAuthUI();
+            
+            // Charger les actualités publiques
+            try {
+                const news = await API.getNews();
+                displayPublicNews(news.filter(n => n.is_published));
+            } catch (error) {
+                console.error('Erreur lors du chargement des actualités:', error);
+                document.getElementById('newsContainer').innerHTML = `
+                    <div class="col-span-3 text-center text-gray-500 dark:text-gray-400">
+                        Erreur lors du chargement des actualités
+                    </div>
+                `;
+            }
         });
     </script>
 </body>
