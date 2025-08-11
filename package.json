@@ -1,0 +1,17 @@
+@"
+{
+  "name": "cs-soleil-afrique",
+  "version": "1.0.0",
+  "description": "Site web du Complexe Scolaire Soleil d'Afrique",
+  "scripts": {
+    "build": "npm install && echo 'Build completed'"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
+"@ | Out-File -FilePath "package.json" -Encoding UTF8
