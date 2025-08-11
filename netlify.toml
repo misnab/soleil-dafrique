@@ -1,7 +1,6 @@
-@"
 [build]
   functions = "netlify/functions"
-  publish = "."
+  publish = ""
   command = "npm install"
 
 [build.environment]
@@ -18,4 +17,3 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-"@ | Out-File -FilePath "netlify.toml" -Encoding UTF8
